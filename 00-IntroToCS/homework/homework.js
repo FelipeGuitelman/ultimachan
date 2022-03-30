@@ -21,7 +21,7 @@ function DecimalABinario(num) {
     do {
       defnum = defnum + (otnum % 2)
       otnum = (otnum - (otnum % 2))/2
-    } while (otnum >= 1)
+    } while (otnum > 0)
     return defnum.split('').reverse().join('')
 }
 
