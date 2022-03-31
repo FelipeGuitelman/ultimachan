@@ -7,9 +7,9 @@ function counter() {
   // ejemplo: const newCounter = counter();
   // newCounter(); // 1
   // newCounter(); // 2
-  var valor = 1
+  var valor = 0
   function newCounter() {
-    return valor ++
+    return ++valor
   }
  return newCounter
 }
