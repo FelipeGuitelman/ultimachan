@@ -7,7 +7,12 @@ function nFactorial(n) {
   // devolvé el factorial de n (n!)
   // ej:
   // el factorial de 3 es 6 (3 * 2 * 1)
+  if (n<0) return 'Error, numero negativo'
+  if (n%1 !== 0) return 'Error, no es un numero entero'
+  if (n == 0 || n == 1) return 1
+  return n * nFactorial(n-1)
 }
+
 
 function nFibonacci(n) {
   // Secuencia de Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144,…
@@ -15,7 +20,11 @@ function nFibonacci(n) {
   // nFibonacci(0) // 0  // el elemento 0 es cero
   // nFibonacci(1) // 1 // el elemento 1 es 1
   // nFibonacci(6) // 1 // el elemento 6 es 8
-
+  if (n<0) return 'Error, numero negativo'
+  if (n%1 !== 0) return 'Error, no es un numero entero'
+  if (n === 0) return 0
+  if (n == 1) return 1
+  return nFibonacci (n-2) + nFibonacci (n -1)
 }
 
 // Para esta parte no es necesario utilizar recursión.
@@ -25,7 +34,16 @@ function nFibonacci(n) {
 // size: Devuelve el número de elementos que contiene la queue.
 
 function Queue() {
-
+  this.array = []
+}
+Queue.prototype.enqueue = function(value) {
+  this.array.push(value)
+}
+Queue.prototype.dequeue = function () {
+  return this.array.shift ()
+}
+Queue.prototype.size = function () {
+  return this.array.length
 }
 
 // No modifiquen nada debajo de esta linea
