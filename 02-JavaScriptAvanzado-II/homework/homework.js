@@ -28,11 +28,9 @@ function cacheFunction(cb) {
   // usá hasOwnProperty!
   var cache = {}
   return function final (a) {
-    if (cache.hasOwnProperty(a))
-    return cache[a];
-    var result = cb(a);
-    cache [a] = result;
-    return result
+    if (cache.hasOwnProperty(a)) return cache[a];
+    cache [a] = cb(a);
+    return cache [a]
   }
 
 }
